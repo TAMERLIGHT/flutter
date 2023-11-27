@@ -1,16 +1,18 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app_new/pages/home/page/home_page.dart';
-import 'package:flutter_app_new/pages/explore/page/explore_page.dart';
-import 'package:flutter_app_new/pages/favorite/page/favorite_page.dart';
-import 'package:flutter_app_new/pages/profile/page/profile_page.dart';
+import 'package:flutter_app_new/explore/view/page/explore_page.dart';
+import 'package:flutter_app_new/favourite/view/favorite_page.dart';
+import 'package:flutter_app_new/home/view/page/home_page.dart';
+import 'package:flutter_app_new/profile/view/profile_page.dart';
 
 class BottomBarPage extends StatefulWidget {
   final String userProfileName;
   final String userProfileEmail;
 
-  const BottomBarPage({Key? key, required this.userProfileName, required this.userProfileEmail}) : super(key: key);
+  const BottomBarPage(
+      {Key? key, required this.userProfileName, required this.userProfileEmail})
+      : super(key: key);
 
   @override
   _BottomBarPageState createState() => _BottomBarPageState();
@@ -70,10 +72,7 @@ class _BottomBarPageState extends State<BottomBarPage> {
       case 2:
         return const FavoritePage();
       case 3:
-        return ProfilePage(
-          userProfileName: widget.userProfileName, // Используем параметры виджета
-          userProfileEmail: widget.userProfileEmail, // Используем параметры виджета
-        );
+        return const ProfilePage();
       default:
         return Container();
     }
